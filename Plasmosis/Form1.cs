@@ -29,13 +29,13 @@ namespace Plasmosis
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(caesarShiftEncrypt("abc order by cwade12c darcikhey27 shawnkoon", 3), "About the Crew");
+            MessageBox.Show(caesarShiftEncrypt("(ABC) order by cwade12c darcikhey27 shawnkoon", 3), "About the Crew");
         }
 
         private String caesarShiftEncrypt(String str, int shift)
         {
-            char[] charset = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-                              'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            int len = charset.Length;
 
             String result = "";
 
@@ -43,23 +43,23 @@ namespace Plasmosis
             {
                 int j = 0;
 
-                for(int i = 0; i < charset.Length; i++)
+                for(int i = 0; i < len; i++)
                 {
                     if(c.Equals(charset[i]))
                     {
                         j = i;
-                        i = charset.Length;
+                        i = len;
                     }
                 }
 
-                j = (j + shift) % 26;
+                j = (j + shift) % len;
 
-                for(int i = 0; i < charset.Length; i++)
+                for(int i = 0; i < len; i++)
                 {
                     if(i == j)
                     {
                         result += charset[i];
-                        i = charset.Length;
+                        i = len;
                     }
                 }
             }
