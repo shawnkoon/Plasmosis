@@ -10,18 +10,26 @@ using System.Windows.Forms;
 
 namespace Plasmosis
 {
-    public partial class frmSymmetric : Form
+    public partial class frmClassical : Form
     {
-        public frmSymmetric()
+        public frmClassical()
         {
             InitializeComponent();
         }
 
+        private void frmClassical_Load(object sender, EventArgs e)
+        {
 
+        }
 
         private void howToToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(caesarShiftEncrypt("abc", 3),"Hello I am How to");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(caesarShiftEncrypt("abc order by cwade12c darcikhey27 shawnkoon", 3), "About the Crew");
         }
 
         private String caesarShiftEncrypt(String str, int shift)
@@ -57,16 +65,6 @@ namespace Plasmosis
             }
 
             return result;
-        }
-
-        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Plasmosis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSymmetric());
+            Application.Run(new frmClassical());
         }
     }
 }
