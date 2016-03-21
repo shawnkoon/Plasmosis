@@ -16,3 +16,6 @@ C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.cs
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Form1.resources
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Properties.Resources.resources
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csproj.GenerateResource.Cache
+C:\code\Plasmosis\Plasmosis\bin\Debug\Plasmosis.exe.config
+C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.exe
+C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.pdb
