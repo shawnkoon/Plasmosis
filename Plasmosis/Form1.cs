@@ -24,7 +24,7 @@ namespace Plasmosis
 
         private void howToToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(caesarShiftEncrypt("abc", 3),"Hello I am How to");
+            MessageBox.Show(caesarShiftDecrypt(caesarShiftEncrypt("abc", 3), 3), "Hello I am How to");
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +57,41 @@ namespace Plasmosis
                 for(int i = 0; i < len; i++)
                 {
                     if(i == j)
+                    {
+                        result += charset[i];
+                        i = len;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private String caesarShiftDecrypt(String str, int shift)
+        {
+            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            int len = charset.Length;
+
+            String result = "";
+
+            foreach (char c in str.ToCharArray())
+            {
+                int j = 0;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (c.Equals(charset[i]))
+                    {
+                        j = i;
+                        i = len;
+                    }
+                }
+
+                j = (j - shift) % len;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (i == j)
                     {
                         result += charset[i];
                         i = len;
