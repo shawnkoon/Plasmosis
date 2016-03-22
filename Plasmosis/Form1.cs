@@ -24,7 +24,7 @@ namespace Plasmosis
 
         private void howToToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(caesarShiftDecrypt(caesarShiftEncrypt("abc", 3), 3), "Hello I am How to");
+            MessageBox.Show(caesarShiftDecrypt(caesarShiftEncrypt("abc yo", 3), 3), "Hello I am How to");
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Plasmosis
 
         private String affineEncrypt(String str, int multiplier, int shift)
         {
-            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            char[] charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
             int len = charset.Length;
 
             String result = "";
@@ -73,7 +73,7 @@ namespace Plasmosis
 
         private String caesarShiftEncrypt(String str, int shift)
         {
-            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            char[] charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
             int len = charset.Length;
 
             String result = "";
@@ -108,7 +108,7 @@ namespace Plasmosis
 
         private String caesarShiftDecrypt(String str, int shift)
         {
-            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            char[] charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
             int len = charset.Length;
 
             String result = "";
