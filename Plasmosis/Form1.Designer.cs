@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.selectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.classicalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.symmetricEncryptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hashingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherEncryptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,15 +38,17 @@
             this.howToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.rtxtPlaintext = new System.Windows.Forms.RichTextBox();
+            this.txtInput = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.grpCipher = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.classicalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.radCaesar = new System.Windows.Forms.RadioButton();
+            this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.radAffine = new System.Windows.Forms.RadioButton();
+            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
@@ -61,22 +64,28 @@
             this.selectionToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.selectionToolStripMenuItem.Text = "Selection";
             // 
+            // classicalToolStripMenuItem
+            // 
+            this.classicalToolStripMenuItem.Name = "classicalToolStripMenuItem";
+            this.classicalToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.classicalToolStripMenuItem.Text = "Classical";
+            // 
             // symmetricEncryptionToolStripMenuItem
             // 
             this.symmetricEncryptionToolStripMenuItem.Name = "symmetricEncryptionToolStripMenuItem";
-            this.symmetricEncryptionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.symmetricEncryptionToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.symmetricEncryptionToolStripMenuItem.Text = "Modern";
             // 
             // hashingToolStripMenuItem
             // 
             this.hashingToolStripMenuItem.Name = "hashingToolStripMenuItem";
-            this.hashingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hashingToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.hashingToolStripMenuItem.Text = "Hashing";
             // 
             // otherEncryptionsToolStripMenuItem
             // 
             this.otherEncryptionsToolStripMenuItem.Name = "otherEncryptionsToolStripMenuItem";
-            this.otherEncryptionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.otherEncryptionsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.otherEncryptionsToolStripMenuItem.Text = "Other";
             // 
             // menuStrip1
@@ -102,14 +111,14 @@
             // howToToolStripMenuItem
             // 
             this.howToToolStripMenuItem.Name = "howToToolStripMenuItem";
-            this.howToToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.howToToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.howToToolStripMenuItem.Text = "How-To";
             this.howToToolStripMenuItem.Click += new System.EventHandler(this.howToToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -123,24 +132,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Message";
             // 
-            // rtxtPlaintext
+            // txtInput
             // 
-            this.rtxtPlaintext.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtPlaintext.Location = new System.Drawing.Point(0, 47);
-            this.rtxtPlaintext.Name = "rtxtPlaintext";
-            this.rtxtPlaintext.Size = new System.Drawing.Size(358, 200);
-            this.rtxtPlaintext.TabIndex = 3;
-            this.rtxtPlaintext.Text = "";
+            this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput.Location = new System.Drawing.Point(0, 47);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(358, 200);
+            this.txtInput.TabIndex = 3;
+            this.txtInput.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 250);
+            this.label2.Location = new System.Drawing.Point(150, 250);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 19);
+            this.label2.Size = new System.Drawing.Size(39, 19);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Encryption Key";
+            this.label2.Text = "Key";
             // 
             // txtKey
             // 
@@ -153,7 +162,10 @@
             // 
             // grpCipher
             // 
-            this.grpCipher.Controls.Add(this.radioButton1);
+            this.grpCipher.Controls.Add(this.btnDecrypt);
+            this.grpCipher.Controls.Add(this.btnEncrypt);
+            this.grpCipher.Controls.Add(this.radAffine);
+            this.grpCipher.Controls.Add(this.radCaesar);
             this.grpCipher.Location = new System.Drawing.Point(0, 291);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(360, 173);
@@ -161,41 +173,36 @@
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
             // 
-            // radioButton1
+            // radCaesar
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 32);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Caesar";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radCaesar.AutoSize = true;
+            this.radCaesar.Location = new System.Drawing.Point(12, 48);
+            this.radCaesar.Name = "radCaesar";
+            this.radCaesar.Size = new System.Drawing.Size(58, 17);
+            this.radCaesar.TabIndex = 0;
+            this.radCaesar.TabStop = true;
+            this.radCaesar.Text = "Caesar";
+            this.radCaesar.UseVisualStyleBackColor = true;
+            this.radCaesar.CheckedChanged += new System.EventHandler(this.radCaesar_CheckedChanged);
             // 
-            // classicalToolStripMenuItem
+            // txtOutput
             // 
-            this.classicalToolStripMenuItem.Name = "classicalToolStripMenuItem";
-            this.classicalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.classicalToolStripMenuItem.Text = "Classical";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(364, 47);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(224, 384);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOutput.Location = new System.Drawing.Point(364, 47);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(224, 384);
+            this.txtOutput.TabIndex = 7;
+            this.txtOutput.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(397, 25);
+            this.label3.Location = new System.Drawing.Point(448, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 19);
+            this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Encrypted Output";
+            this.label3.Text = "Output";
             // 
             // btnSave
             // 
@@ -206,6 +213,37 @@
             this.btnSave.Text = "Save to File";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // radAffine
+            // 
+            this.radAffine.AutoSize = true;
+            this.radAffine.Location = new System.Drawing.Point(12, 25);
+            this.radAffine.Name = "radAffine";
+            this.radAffine.Size = new System.Drawing.Size(52, 17);
+            this.radAffine.TabIndex = 1;
+            this.radAffine.TabStop = true;
+            this.radAffine.Text = "Affine";
+            this.radAffine.UseVisualStyleBackColor = true;
+            this.radAffine.CheckedChanged += new System.EventHandler(this.radAffine_CheckedChanged);
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Location = new System.Drawing.Point(117, 139);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(118, 28);
+            this.btnEncrypt.TabIndex = 2;
+            this.btnEncrypt.Text = "Encrypt";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(240, 139);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(118, 28);
+            this.btnDecrypt.TabIndex = 3;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            // 
             // frmClassical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,11 +252,11 @@
             this.ClientSize = new System.Drawing.Size(588, 468);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.grpCipher);
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rtxtPlaintext);
+            this.Controls.Add(this.txtInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -249,15 +287,18 @@
         private System.Windows.Forms.ToolStripMenuItem howToToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox rtxtPlaintext;
+        private System.Windows.Forms.RichTextBox txtInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.ToolStripMenuItem classicalToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpCipher;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RadioButton radCaesar;
+        private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.RadioButton radAffine;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnEncrypt;
     }
 }
 

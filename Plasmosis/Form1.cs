@@ -12,6 +12,8 @@ namespace Plasmosis
 {
     public partial class frmClassical : Form
     {
+        private String cipher;
+
         public frmClassical()
         {
             InitializeComponent();
@@ -139,6 +141,30 @@ namespace Plasmosis
             }
 
             return result;
+        }
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            switch(this.cipher)
+            {
+                case "Affine":
+                    txtOutput.Text = affineEncrypt(txtInput.Text, 5, int.Parse(txtKey.Text));
+                break;
+
+                case "Caesar":
+                    txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(txtKey.Text));
+                break;
+            }
+        }
+
+        private void radAffine_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cipher = "Affine";
+        }
+
+        private void radCaesar_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cipher = "Caesar";
         }
     }
 }
