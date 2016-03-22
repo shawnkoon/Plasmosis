@@ -29,7 +29,46 @@ namespace Plasmosis
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(caesarShiftEncrypt("(ABC) order by cwade12c darcikhey27 shawnkoon", 3), "About the Crew");
+            MessageBox.Show(affineEncrypt("abc", 5, 3), "About the Crew");
+        }
+
+        private String affineEncrypt(String str, int multiplier, int shift)
+        {
+            char[] charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            int len = charset.Length;
+
+            String result = "";
+
+            foreach (char c in str.ToCharArray())
+            {
+                int j = 0;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (c.Equals(charset[i]))
+                    {
+                        j = i;
+                        i = len;
+                    }
+                }
+
+                j++;
+
+                j = (j * multiplier + shift) % len;
+
+                j--;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (i == j)
+                    {
+                        result += charset[i];
+                        i = len;
+                    }
+                }
+            }
+
+            return result;
         }
 
         private String caesarShiftEncrypt(String str, int shift)
