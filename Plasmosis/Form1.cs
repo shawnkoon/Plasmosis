@@ -148,7 +148,26 @@ namespace Plasmosis
             switch(this.cipher)
             {
                 case "Affine":
-                    txtOutput.Text = affineEncrypt(txtInput.Text, 5, int.Parse(txtKey.Text));
+                    if(!txtKey.Text.Contains(","))
+                    {
+                        MessageBox.Show("Affine requires a multiplier in addition to a shift. For your key, please enter an integer for your multiplier and an integer for your shift separated by a comma (,). For example: 5,3 would be a multiplier of 5 and a shift of 3.", "Affine Alert!");
+                    }
+                    else
+                    {
+                        String[] p = txtKey.Text.Split(',');
+
+                        if(p.Length > 2 || p.Length < 1)
+                        {
+                            MessageBox.Show("Affine requires a multiplier in addition to a shift. For your key, please enter an integer for your multiplier and an integer for your shift separated by a comma (,). For example: 5,3 would be a multiplier of 5 and a shift of 3.", "Affine Alert!");
+                        }
+                        else
+                        {
+                            int m = int.Parse(p[0]), s = int.Parse(p[1]);
+
+                            txtOutput.Text = affineEncrypt(txtInput.Text, m, s);
+                        }
+                    }
+                    
                 break;
 
                 case "Caesar":
@@ -165,6 +184,16 @@ namespace Plasmosis
         private void radCaesar_CheckedChanged(object sender, EventArgs e)
         {
             this.cipher = "Caesar";
+        }
+
+        private void txtKey_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
     }
 }

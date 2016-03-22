@@ -159,6 +159,7 @@
             this.txtKey.Size = new System.Drawing.Size(359, 13);
             this.txtKey.TabIndex = 5;
             this.txtKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtKey.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
             // 
             // grpCipher
             // 
