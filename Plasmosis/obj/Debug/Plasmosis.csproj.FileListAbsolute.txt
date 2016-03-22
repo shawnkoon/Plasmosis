@@ -13,7 +13,6 @@ C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.pd
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\bin\Debug\Plasmosis.exe
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\bin\Debug\Plasmosis.pdb
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csprojResolveAssemblyReference.cache
-C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Form1.resources
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Properties.Resources.resources
 C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csproj.GenerateResource.Cache
 C:\code\Plasmosis\Plasmosis\bin\Debug\Plasmosis.exe.config
@@ -25,3 +24,4 @@ C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csprojResolveAssemblyReference.c
 C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Properties.Resources.resources
 C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csproj.GenerateResource.Cache
 C:\code\Plasmosis\Plasmosis\obj\Debug\Plasmosis.frmClassical.resources
+C:\Users\shawnkoon\Desktop\gitProject\Plasmosis\Plasmosis\obj\Debug\Plasmosis.frmClassical.resources

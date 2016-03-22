@@ -17,6 +17,10 @@ namespace Plasmosis
         public frmClassical()
         {
             InitializeComponent();
+            //Initialy set the visible for key text boxes to false;
+            longKey.Visible = false;
+            shortKey1.Visible = false;
+            shortKey2.Visible = false;
         }
 
         private void frmClassical_Load(object sender, EventArgs e)
@@ -148,13 +152,13 @@ namespace Plasmosis
             switch(this.cipher)
             {
                 case "Affine":
-                    if(!txtKey.Text.Contains(","))
+                    if(!longKey.Text.Contains(","))
                     {
                         MessageBox.Show("Affine requires a multiplier in addition to a shift. For your key, please enter an integer for your multiplier and an integer for your shift separated by a comma (,). For example: 5,3 would be a multiplier of 5 and a shift of 3.", "Affine Alert!");
                     }
                     else
                     {
-                        String[] p = txtKey.Text.Split(',');
+                        String[] p = longKey.Text.Split(',');
 
                         if(p.Length > 2 || p.Length < 1)
                         {
@@ -171,7 +175,7 @@ namespace Plasmosis
                 break;
 
                 case "Caesar":
-                    txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(txtKey.Text));
+                    txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(longKey.Text));
                 break;
             }
         }
@@ -179,21 +183,30 @@ namespace Plasmosis
         private void radAffine_CheckedChanged(object sender, EventArgs e)
         {
             this.cipher = "Affine";
+
+            //Swap text box visiblity. ex) show two text box shortKey1 for multiplier, shortkey2 for shift
+            longKey.Visible = false;
+            shortKey1.Visible = true;
+            shortKey2.Visible = true;
+
+            //Set the info label's text to explain the example input key value
+            infoLabel.Text = "       ↑ Multiplier                   ↑ Shift";
         }
 
         private void radCaesar_CheckedChanged(object sender, EventArgs e)
         {
             this.cipher = "Caesar";
+
+            //Swap text box visiblity. ex) longkey for shift of 
+            shortKey1.Visible = false;
+            shortKey2.Visible = false;
+            longKey.Visible = true;
+
+            //Set the info label's text to explain the example input key value
+            infoLabel.Text = "                           ↑ Shift";
+
+
         }
 
-        private void txtKey_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
-        }
     }
 }

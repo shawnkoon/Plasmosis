@@ -40,15 +40,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtKey = new System.Windows.Forms.TextBox();
+            this.longKey = new System.Windows.Forms.TextBox();
             this.grpCipher = new System.Windows.Forms.GroupBox();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.radAffine = new System.Windows.Forms.RadioButton();
             this.radCaesar = new System.Windows.Forms.RadioButton();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.radAffine = new System.Windows.Forms.RadioButton();
-            this.btnEncrypt = new System.Windows.Forms.Button();
-            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.infoLabel = new System.Windows.Forms.Label();
+            this.shortKey1 = new System.Windows.Forms.TextBox();
+            this.shortKey2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +98,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(595, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -134,10 +137,11 @@
             // 
             // txtInput
             // 
+            this.txtInput.BackColor = System.Drawing.SystemColors.Menu;
             this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInput.Location = new System.Drawing.Point(0, 47);
+            this.txtInput.Location = new System.Drawing.Point(2, 47);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(358, 200);
+            this.txtInput.Size = new System.Drawing.Size(358, 158);
             this.txtInput.TabIndex = 3;
             this.txtInput.Text = "";
             // 
@@ -145,21 +149,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(150, 250);
+            this.label2.Location = new System.Drawing.Point(153, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Key";
             // 
-            // txtKey
+            // longKey
             // 
-            this.txtKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKey.Location = new System.Drawing.Point(-1, 272);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(359, 13);
-            this.txtKey.TabIndex = 5;
-            this.txtKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtKey.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
+            this.longKey.BackColor = System.Drawing.SystemColors.Info;
+            this.longKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.longKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.longKey.Location = new System.Drawing.Point(54, 240);
+            this.longKey.Name = "longKey";
+            this.longKey.Size = new System.Drawing.Size(257, 13);
+            this.longKey.TabIndex = 5;
+            this.longKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // grpCipher
             // 
@@ -173,6 +178,37 @@
             this.grpCipher.TabIndex = 6;
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(240, 139);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(118, 28);
+            this.btnDecrypt.TabIndex = 3;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Location = new System.Drawing.Point(117, 139);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(118, 28);
+            this.btnEncrypt.TabIndex = 2;
+            this.btnEncrypt.Text = "Encrypt";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
+            // radAffine
+            // 
+            this.radAffine.AutoSize = true;
+            this.radAffine.Location = new System.Drawing.Point(12, 25);
+            this.radAffine.Name = "radAffine";
+            this.radAffine.Size = new System.Drawing.Size(52, 17);
+            this.radAffine.TabIndex = 1;
+            this.radAffine.TabStop = true;
+            this.radAffine.Text = "Affine";
+            this.radAffine.UseVisualStyleBackColor = true;
+            this.radAffine.CheckedChanged += new System.EventHandler(this.radAffine_CheckedChanged);
             // 
             // radCaesar
             // 
@@ -188,9 +224,12 @@
             // 
             // txtOutput
             // 
+            this.txtOutput.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(364, 47);
             this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ReadOnly = true;
             this.txtOutput.Size = new System.Drawing.Size(224, 384);
             this.txtOutput.TabIndex = 7;
             this.txtOutput.Text = "";
@@ -214,48 +253,52 @@
             this.btnSave.Text = "Save to File";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // radAffine
+            // infoLabel
             // 
-            this.radAffine.AutoSize = true;
-            this.radAffine.Location = new System.Drawing.Point(12, 25);
-            this.radAffine.Name = "radAffine";
-            this.radAffine.Size = new System.Drawing.Size(52, 17);
-            this.radAffine.TabIndex = 1;
-            this.radAffine.TabStop = true;
-            this.radAffine.Text = "Affine";
-            this.radAffine.UseVisualStyleBackColor = true;
-            this.radAffine.CheckedChanged += new System.EventHandler(this.radAffine_CheckedChanged);
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLabel.Location = new System.Drawing.Point(31, 268);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(303, 20);
+            this.infoLabel.TabIndex = 10;
+            this.infoLabel.Text = "Please Choose One of the Following Cipher!";
             // 
-            // btnEncrypt
+            // shortKey1
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(117, 139);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(118, 28);
-            this.btnEncrypt.TabIndex = 2;
-            this.btnEncrypt.Text = "Encrypt";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            this.shortKey1.BackColor = System.Drawing.SystemColors.Info;
+            this.shortKey1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.shortKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shortKey1.Location = new System.Drawing.Point(54, 240);
+            this.shortKey1.Name = "shortKey1";
+            this.shortKey1.Size = new System.Drawing.Size(101, 13);
+            this.shortKey1.TabIndex = 11;
+            this.shortKey1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnDecrypt
+            // shortKey2
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(240, 139);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(118, 28);
-            this.btnDecrypt.TabIndex = 3;
-            this.btnDecrypt.Text = "Decrypt";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.shortKey2.BackColor = System.Drawing.SystemColors.Info;
+            this.shortKey2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.shortKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shortKey2.Location = new System.Drawing.Point(207, 240);
+            this.shortKey2.Name = "shortKey2";
+            this.shortKey2.Size = new System.Drawing.Size(104, 13);
+            this.shortKey2.TabIndex = 12;
+            this.shortKey2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmClassical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(588, 468);
+            this.ClientSize = new System.Drawing.Size(595, 472);
+            this.Controls.Add(this.shortKey2);
+            this.Controls.Add(this.shortKey1);
+            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.grpCipher);
-            this.Controls.Add(this.txtKey);
+            this.Controls.Add(this.longKey);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.label1);
@@ -290,7 +333,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtInput;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtKey;
+        private System.Windows.Forms.TextBox longKey;
         private System.Windows.Forms.ToolStripMenuItem classicalToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpCipher;
         private System.Windows.Forms.RadioButton radCaesar;
@@ -300,6 +343,9 @@
         private System.Windows.Forms.RadioButton radAffine;
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.TextBox shortKey1;
+        private System.Windows.Forms.TextBox shortKey2;
     }
 }
 
