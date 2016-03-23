@@ -149,35 +149,48 @@ namespace Plasmosis
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            switch(this.cipher)
-            {
+            switch (this.cipher)
+            { 
                 case "Affine":
-                    if(!longKey.Text.Contains(","))
+
+                    if(!isInteger(shortKey1.Text) || !isInteger(shortKey2.Text))
                     {
                         MessageBox.Show("Affine requires a multiplier in addition to a shift. For your key, please enter an integer for your multiplier and an integer for your shift separated by a comma (,). For example: 5,3 would be a multiplier of 5 and a shift of 3.", "Affine Alert!");
                     }
                     else
                     {
-                        String[] p = longKey.Text.Split(',');
+                        int multiplier = int.Parse(shortKey1.Text);
 
-                        if(p.Length > 2 || p.Length < 1)
+                        if(multiplier <= 0)
                         {
-                            MessageBox.Show("Affine requires a multiplier in addition to a shift. For your key, please enter an integer for your multiplier and an integer for your shift separated by a comma (,). For example: 5,3 would be a multiplier of 5 and a shift of 3.", "Affine Alert!");
+                            MessageBox.Show("The multiplier must be a positive integer!");
                         }
                         else
                         {
-                            int m = int.Parse(p[0]), s = int.Parse(p[1]);
-
-                            txtOutput.Text = affineEncrypt(txtInput.Text, m, s);
+                            txtOutput.Text = affineEncrypt(txtInput.Text, int.Parse(shortKey1.Text), int.Parse(shortKey2.Text));
                         }
                     }
-                    
                 break;
 
                 case "Caesar":
-                    txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(longKey.Text));
+                    if(!isInteger(longKey.Text))
+                    {
+                        MessageBox.Show("The shift must be an integer.");
+                    }
+                    else
+                    {
+                        txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(longKey.Text));
+                    }
                 break;
             }
+        }
+
+        //check to see if input is an integer https://msdn.microsoft.com/en-us/library/bb384043.aspx
+        private Boolean isInteger(String str) 
+        {
+            int result = 0;
+
+            return int.TryParse(str, out result);
         }
 
         private void radAffine_CheckedChanged(object sender, EventArgs e)
