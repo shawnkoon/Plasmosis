@@ -140,6 +140,7 @@
             // 
             this.txtInput.BackColor = System.Drawing.SystemColors.Menu;
             this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInput.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.Location = new System.Drawing.Point(7, 117);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(358, 158);
@@ -190,6 +191,7 @@
             this.btnDecrypt.TabIndex = 3;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // btnEncrypt
             // 
@@ -204,9 +206,10 @@
             // radAffine
             // 
             this.radAffine.AutoSize = true;
+            this.radAffine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radAffine.Location = new System.Drawing.Point(12, 25);
             this.radAffine.Name = "radAffine";
-            this.radAffine.Size = new System.Drawing.Size(52, 17);
+            this.radAffine.Size = new System.Drawing.Size(69, 24);
             this.radAffine.TabIndex = 1;
             this.radAffine.TabStop = true;
             this.radAffine.Text = "Affine";
@@ -216,9 +219,10 @@
             // radCaesar
             // 
             this.radCaesar.AutoSize = true;
-            this.radCaesar.Location = new System.Drawing.Point(12, 48);
+            this.radCaesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radCaesar.Location = new System.Drawing.Point(12, 59);
             this.radCaesar.Name = "radCaesar";
-            this.radCaesar.Size = new System.Drawing.Size(58, 17);
+            this.radCaesar.Size = new System.Drawing.Size(78, 24);
             this.radCaesar.TabIndex = 0;
             this.radCaesar.TabStop = true;
             this.radCaesar.Text = "Caesar";
@@ -329,7 +333,6 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plasmosis - Make Encryption Great Again   lol jk";
-            this.Load += new System.EventHandler(this.frmClassical_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpCipher.ResumeLayout(false);

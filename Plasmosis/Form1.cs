@@ -27,11 +27,6 @@ namespace Plasmosis
 
         }
 
-        private void frmClassical_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void howToToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(caesarShiftDecrypt(caesarShiftEncrypt("abc yo", 3), 3), "Hello I am How to");
@@ -65,6 +60,47 @@ namespace Plasmosis
                 j++;
 
                 j = (j * multiplier + shift) % len;
+
+                j--;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (i == j)
+                    {
+                        result += charset[i];
+                        i = len;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private String affineDecrypt(String str, int multiplier, int shift)
+        {
+            // Affine Decryption algorithm goes here.
+            // Multiplier, Shift is garenteed to be an Integers.
+            char[] charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
+            int len = charset.Length;
+
+            String result = "";
+
+            foreach (char c in str.ToCharArray())
+            {
+                int j = 0;
+
+                for (int i = 0; i < len; i++)
+                {
+                    if (c.Equals(charset[i]))
+                    {
+                        j = i;
+                        i = len;
+                    }
+                }
+
+                j++;
+
+                j = (j * multiplier - shift) % len;
 
                 j--;
 
@@ -188,7 +224,34 @@ namespace Plasmosis
                 break;
             }
         }
-        
+
+        //Decrypt button clicked.
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            if(this.cipher.Equals("Affine"))
+            {
+                try
+                {
+                    txtOutput.Text = affineDecrypt(txtInput.Text, int.Parse(shortKey1.Text), int.Parse(shortKey2.Text));
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message + "\nPerhaps put Correct Input in [Key] section", "Error");
+                }
+            }
+            else if(this.cipher.Equals("Caesar"))
+            {
+                try
+                {
+                    txtOutput.Text = caesarShiftDecrypt(txtInput.Text, int.Parse(longKey.Text));
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message +"\nPerhaps put Correct Input in [Key] section", "Error");
+                }
+            }
+        }
+
 
         private void radAffine_CheckedChanged(object sender, EventArgs e)
         {
@@ -275,5 +338,7 @@ namespace Plasmosis
                 shortKey2.Text = oldshortKey2;
             }
         }
+
+        
     }
 }
