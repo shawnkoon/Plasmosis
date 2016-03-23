@@ -24,6 +24,7 @@ namespace Plasmosis
             longKey.Visible = false;
             shortKey1.Visible = false;
             shortKey2.Visible = false;
+
         }
 
         private void frmClassical_Load(object sender, EventArgs e)
