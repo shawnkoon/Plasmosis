@@ -165,6 +165,7 @@
             this.longKey.Size = new System.Drawing.Size(257, 13);
             this.longKey.TabIndex = 5;
             this.longKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.longKey.TextChanged += new System.EventHandler(this.longKey_TextChanged);
             // 
             // grpCipher
             // 
@@ -273,6 +274,7 @@
             this.shortKey1.Size = new System.Drawing.Size(101, 13);
             this.shortKey1.TabIndex = 11;
             this.shortKey1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.shortKey1.TextChanged += new System.EventHandler(this.shortKey1_TextChanged);
             // 
             // shortKey2
             // 
@@ -284,6 +286,7 @@
             this.shortKey2.Size = new System.Drawing.Size(104, 13);
             this.shortKey2.TabIndex = 12;
             this.shortKey2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.shortKey2.TextChanged += new System.EventHandler(this.shortKey2_TextChanged);
             // 
             // frmClassical
             // 

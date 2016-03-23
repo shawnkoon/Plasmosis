@@ -13,6 +13,9 @@ namespace Plasmosis
     public partial class frmClassical : Form
     {
         private String cipher;
+        private string oldLongKey = "";
+        private string oldshortKey1 = "";
+        private string oldshortKey2 = "";
 
         public frmClassical()
         {
@@ -184,14 +187,7 @@ namespace Plasmosis
                 break;
             }
         }
-
-        //check to see if input is an integer https://msdn.microsoft.com/en-us/library/bb384043.aspx
-        private Boolean isInteger(String str) 
-        {
-            int result = 0;
-
-            return int.TryParse(str, out result);
-        }
+        
 
         private void radAffine_CheckedChanged(object sender, EventArgs e)
         {
@@ -221,5 +217,62 @@ namespace Plasmosis
 
         }
 
+        //check to see if input is an integer https://msdn.microsoft.com/en-us/library/bb384043.aspx
+        private Boolean isInteger(String str)
+        {
+            int result = 0;
+
+            return int.TryParse(str, out result);
+        }
+
+
+        //Limit the text in the text box to be integer only.
+        private void longKey_TextChanged(object sender, EventArgs e)
+        {
+            //check to see if new text is still integer.
+            
+            if(isInteger(longKey.Text) || longKey.Text.Equals(""))
+            {
+                oldLongKey = longKey.Text;
+            }   
+            else
+            {
+                //oldLongKey is "" empty initially.
+                MessageBox.Show("Please Type Numbers ONLY\nex) 0 - 9", "Error");
+                longKey.Text = oldLongKey;
+            }
+        }
+
+        private void shortKey1_TextChanged(object sender, EventArgs e)
+        {
+            //check to see if new text is still integer.
+
+            if (isInteger(shortKey1.Text) || shortKey1.Text.Equals(""))
+            {
+                oldshortKey1 = shortKey1.Text;
+            }
+            else
+            {
+                //shortKey1 is "" empty initially.
+                MessageBox.Show("Please Type Integers ONLY\nex) 0 - 9", "Error");
+                shortKey1.Text = oldshortKey1;
+            }
+        }
+
+        private void shortKey2_TextChanged(object sender, EventArgs e)
+        {
+            //check to see if new text is still integer.
+
+            if (isInteger(shortKey2.Text) || shortKey2.Text.Equals(""))
+            {
+                oldshortKey2 = shortKey2.Text;
+            }
+            else
+            {
+                //shortKey2 is "" empty initially.
+                MessageBox.Show("Please Type Integers ONLY\nex) 0 - 9", "Error");
+                shortKey2.Text = oldshortKey2;
+            }
+        }
     }
 }
