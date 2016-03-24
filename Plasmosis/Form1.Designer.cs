@@ -135,11 +135,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Font = new System.Drawing.Font("Dimitri Swank", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
             this.label1.Location = new System.Drawing.Point(132, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.Size = new System.Drawing.Size(92, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Message";
             // 
@@ -157,11 +158,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label2.Font = new System.Drawing.Font("Dimitri Swank", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkGreen;
             this.label2.Location = new System.Drawing.Point(158, 283);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 21);
+            this.label2.Size = new System.Drawing.Size(48, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "Key";
             // 
@@ -206,7 +207,7 @@
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnEncrypt.BackColor = System.Drawing.Color.DarkGreen;
             this.btnEncrypt.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEncrypt.Location = new System.Drawing.Point(117, 139);
@@ -220,11 +221,11 @@
             // radAffine
             // 
             this.radAffine.AutoSize = true;
-            this.radAffine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAffine.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.radAffine.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAffine.ForeColor = System.Drawing.Color.DarkGreen;
             this.radAffine.Location = new System.Drawing.Point(12, 25);
             this.radAffine.Name = "radAffine";
-            this.radAffine.Size = new System.Drawing.Size(69, 24);
+            this.radAffine.Size = new System.Drawing.Size(81, 27);
             this.radAffine.TabIndex = 1;
             this.radAffine.TabStop = true;
             this.radAffine.Text = "Affine";
@@ -234,11 +235,11 @@
             // radCaesar
             // 
             this.radCaesar.AutoSize = true;
-            this.radCaesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCaesar.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.radCaesar.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radCaesar.ForeColor = System.Drawing.Color.DarkGreen;
             this.radCaesar.Location = new System.Drawing.Point(12, 59);
             this.radCaesar.Name = "radCaesar";
-            this.radCaesar.Size = new System.Drawing.Size(78, 24);
+            this.radCaesar.Size = new System.Drawing.Size(82, 27);
             this.radCaesar.TabIndex = 0;
             this.radCaesar.TabStop = true;
             this.radCaesar.Text = "Caesar";
@@ -261,17 +262,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Font = new System.Drawing.Font("Dimitri Swank", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
             this.label3.Location = new System.Drawing.Point(453, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.Size = new System.Drawing.Size(76, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Output";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnSave.BackColor = System.Drawing.Color.DarkGreen;
             this.btnSave.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Location = new System.Drawing.Point(369, 500);
@@ -323,11 +324,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Lucida Console", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(165, 24);
+            this.label4.Font = new System.Drawing.Font("HACKED", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label4.Location = new System.Drawing.Point(170, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(290, 48);
+            this.label4.Size = new System.Drawing.Size(287, 67);
             this.label4.TabIndex = 13;
             this.label4.Text = "Classical";
             // 
