@@ -130,10 +130,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dimitri Swank", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(132, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 24);
+            this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Message";
             // 
@@ -151,10 +151,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Dimitri Swank", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(158, 283);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 26);
+            this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Key";
             // 
@@ -162,11 +162,11 @@
             // 
             this.longKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.longKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.longKey.Font = new System.Drawing.Font("Lemon/Milk", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.longKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.longKey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.longKey.Location = new System.Drawing.Point(59, 310);
             this.longKey.Name = "longKey";
-            this.longKey.Size = new System.Drawing.Size(257, 16);
+            this.longKey.Size = new System.Drawing.Size(257, 17);
             this.longKey.TabIndex = 5;
             this.longKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.longKey.TextChanged += new System.EventHandler(this.longKey_TextChanged);
@@ -246,10 +246,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Dimitri Swank", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(453, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 24);
+            this.label3.Size = new System.Drawing.Size(72, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Output";
             // 
@@ -277,11 +277,11 @@
             // 
             this.shortKey1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.shortKey1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.shortKey1.Font = new System.Drawing.Font("Lemon/Milk", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shortKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shortKey1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.shortKey1.Location = new System.Drawing.Point(59, 310);
             this.shortKey1.Name = "shortKey1";
-            this.shortKey1.Size = new System.Drawing.Size(101, 16);
+            this.shortKey1.Size = new System.Drawing.Size(101, 17);
             this.shortKey1.TabIndex = 11;
             this.shortKey1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shortKey1.TextChanged += new System.EventHandler(this.shortKey1_TextChanged);
@@ -290,11 +290,11 @@
             // 
             this.shortKey2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.shortKey2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.shortKey2.Font = new System.Drawing.Font("Lemon/Milk", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shortKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shortKey2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.shortKey2.Location = new System.Drawing.Point(212, 310);
             this.shortKey2.Name = "shortKey2";
-            this.shortKey2.Size = new System.Drawing.Size(104, 16);
+            this.shortKey2.Size = new System.Drawing.Size(104, 17);
             this.shortKey2.TabIndex = 12;
             this.shortKey2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shortKey2.TextChanged += new System.EventHandler(this.shortKey2_TextChanged);
@@ -302,11 +302,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("HACKED", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label4.Location = new System.Drawing.Point(165, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(287, 67);
+            this.label4.Size = new System.Drawing.Size(297, 73);
             this.label4.TabIndex = 13;
             this.label4.Text = "Classical";
             // 
@@ -333,7 +333,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmClassical";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.6D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plasmosis - Make Encryption Great Again   lol jk";
             this.menuStrip1.ResumeLayout(false);
