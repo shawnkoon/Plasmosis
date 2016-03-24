@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClassical));
             this.selectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classicalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.symmetricEncryptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,42 +60,46 @@
             // 
             // selectionToolStripMenuItem
             // 
+            this.selectionToolStripMenuItem.BackColor = System.Drawing.Color.DimGray;
             this.selectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.classicalToolStripMenuItem,
             this.symmetricEncryptionToolStripMenuItem,
             this.hashingToolStripMenuItem,
             this.otherEncryptionsToolStripMenuItem});
+            this.selectionToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.selectionToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.selectionToolStripMenuItem.Name = "selectionToolStripMenuItem";
-            this.selectionToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.selectionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.selectionToolStripMenuItem.Text = "Selection";
             // 
             // classicalToolStripMenuItem
             // 
             this.classicalToolStripMenuItem.Name = "classicalToolStripMenuItem";
-            this.classicalToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.classicalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.classicalToolStripMenuItem.Text = "Classical";
             // 
             // symmetricEncryptionToolStripMenuItem
             // 
             this.symmetricEncryptionToolStripMenuItem.Name = "symmetricEncryptionToolStripMenuItem";
-            this.symmetricEncryptionToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.symmetricEncryptionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.symmetricEncryptionToolStripMenuItem.Text = "Modern";
             // 
             // hashingToolStripMenuItem
             // 
             this.hashingToolStripMenuItem.Name = "hashingToolStripMenuItem";
-            this.hashingToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.hashingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hashingToolStripMenuItem.Text = "Hashing";
             // 
             // otherEncryptionsToolStripMenuItem
             // 
             this.otherEncryptionsToolStripMenuItem.Name = "otherEncryptionsToolStripMenuItem";
-            this.otherEncryptionsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.otherEncryptionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.otherEncryptionsToolStripMenuItem.Text = "Other";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectionToolStripMenuItem,
             this.helpToolStripMenuItem});
@@ -110,38 +115,39 @@
             this.howToToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // howToToolStripMenuItem
             // 
             this.howToToolStripMenuItem.Name = "howToToolStripMenuItem";
-            this.howToToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.howToToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.howToToolStripMenuItem.Text = "How-To";
             this.howToToolStripMenuItem.Click += new System.EventHandler(this.howToToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(132, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.Size = new System.Drawing.Size(93, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Message";
             // 
             // txtInput
             // 
-            this.txtInput.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInput.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtInput.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput.ForeColor = System.Drawing.Color.White;
             this.txtInput.Location = new System.Drawing.Point(7, 117);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(358, 158);
@@ -151,10 +157,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(158, 283);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Key";
             // 
@@ -177,6 +184,7 @@
             this.grpCipher.Controls.Add(this.btnEncrypt);
             this.grpCipher.Controls.Add(this.radAffine);
             this.grpCipher.Controls.Add(this.radCaesar);
+            this.grpCipher.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.grpCipher.Location = new System.Drawing.Point(5, 361);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(360, 173);
@@ -186,28 +194,34 @@
             // 
             // btnDecrypt
             // 
+            this.btnDecrypt.BackColor = System.Drawing.Color.Brown;
+            this.btnDecrypt.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.Location = new System.Drawing.Point(240, 139);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(118, 28);
             this.btnDecrypt.TabIndex = 3;
             this.btnDecrypt.Text = "Decrypt";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.UseVisualStyleBackColor = false;
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // btnEncrypt
             // 
+            this.btnEncrypt.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnEncrypt.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEncrypt.Location = new System.Drawing.Point(117, 139);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(118, 28);
             this.btnEncrypt.TabIndex = 2;
             this.btnEncrypt.Text = "Encrypt";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.UseVisualStyleBackColor = false;
             this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // radAffine
             // 
             this.radAffine.AutoSize = true;
             this.radAffine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAffine.ForeColor = System.Drawing.SystemColors.Desktop;
             this.radAffine.Location = new System.Drawing.Point(12, 25);
             this.radAffine.Name = "radAffine";
             this.radAffine.Size = new System.Drawing.Size(69, 24);
@@ -221,6 +235,7 @@
             // 
             this.radCaesar.AutoSize = true;
             this.radCaesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radCaesar.ForeColor = System.Drawing.SystemColors.Desktop;
             this.radCaesar.Location = new System.Drawing.Point(12, 59);
             this.radCaesar.Name = "radCaesar";
             this.radCaesar.Size = new System.Drawing.Size(78, 24);
@@ -232,13 +247,13 @@
             // 
             // txtOutput
             // 
-            this.txtOutput.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOutput.Font = new System.Drawing.Font("Arial", 9F);
+            this.txtOutput.BackColor = System.Drawing.SystemColors.ControlText;
+            this.txtOutput.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtOutput.Location = new System.Drawing.Point(369, 117);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(224, 384);
+            this.txtOutput.Size = new System.Drawing.Size(224, 377);
             this.txtOutput.TabIndex = 7;
             this.txtOutput.Text = "";
             this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
@@ -246,27 +261,32 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Lucida Console", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(453, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 24);
+            this.label3.Size = new System.Drawing.Size(81, 19);
             this.label3.TabIndex = 8;
             this.label3.Text = "Output";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(369, 507);
+            this.btnSave.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnSave.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Location = new System.Drawing.Point(369, 500);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(224, 27);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save to File";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
             this.infoLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.infoLabel.Location = new System.Drawing.Point(36, 338);
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(303, 20);
@@ -302,11 +322,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(165, 25);
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Font = new System.Drawing.Font("Lucida Console", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Location = new System.Drawing.Point(165, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(297, 73);
+            this.label4.Size = new System.Drawing.Size(290, 48);
             this.label4.TabIndex = 13;
             this.label4.Text = "Classical";
             // 
@@ -314,7 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(601, 541);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.shortKey2);
@@ -330,12 +351,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmClassical";
-            this.Opacity = 0.6D;
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Plasmosis - Make Encryption Great Again   lol jk";
+            this.Text = "Plasmosis - Friendly encryption";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpCipher.ResumeLayout(false);
