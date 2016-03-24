@@ -150,7 +150,7 @@ namespace Plasmosis
 
                 j = (j + shift) % len;
 
-                for(int i = 0; i < len; i++)
+                for (int i = 0; i < len; i++)
                 {
                     if(i == j)
                     {
@@ -183,7 +183,19 @@ namespace Plasmosis
                     }
                 }
 
-                j = (j - shift) % len;
+                if (j - shift < 0)
+                {
+                    j = len + ((j - shift) % len);
+                }
+                else
+                {
+                    j = (j - shift) % len;
+                }
+
+                if(j == len)
+                {
+                    j = j % len;
+                }
 
                 for (int i = 0; i < len; i++)
                 {
