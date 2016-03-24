@@ -199,7 +199,7 @@ namespace Plasmosis
         }
 
 
-        // ###################### DOES NOT WORK ######################### //
+       
         // Either Affine or Caesar decryption does not work properly.
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
@@ -242,6 +242,7 @@ namespace Plasmosis
         }
 
         //Decrypt button clicked.
+        // ###################### DOES NOT WORK ######################### //
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             if(this.cipher.Equals("Affine"))

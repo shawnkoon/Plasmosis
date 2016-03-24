@@ -34,3 +34,12 @@ C:\code\Plasmosis\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csprojResolveAssemblyR
 C:\code\Plasmosis\Plasmosis\Plasmosis\obj\Debug\Plasmosis.frmClassical.resources
 C:\code\Plasmosis\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Properties.Resources.resources
 C:\code\Plasmosis\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csproj.GenerateResource.Cache
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\bin\Debug\Plasmosis.exe.config
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.exe
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.pdb
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\bin\Debug\Plasmosis.exe
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\bin\Debug\Plasmosis.pdb
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csprojResolveAssemblyReference.cache
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.frmClassical.resources
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.Properties.Resources.resources
+E:\Dropbox\Dropbox\10.EWU_Journey\Spring_2016\VisualStudioProjects\Plasmosis\Plasmosis\obj\Debug\Plasmosis.csproj.GenerateResource.Cache
