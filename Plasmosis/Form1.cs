@@ -7,15 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Plasmosis
 {
     public partial class frmClassical : Form
     {
-        private String cipher;
+        private String cipher = "";
         private string oldLongKey = "";
         private string oldshortKey1 = "";
         private string oldshortKey2 = "";
+
+        private String inputCipherForFile = "";
+        private String statusForfile = "";
+        private String inputForFile = "";
+        private String inputLongKeyForFile = "";
+        private String inputShortKey1ForFile = "";
+        private String inputShortKey2ForFile = "";
 
         public frmClassical()
         {
@@ -76,10 +84,13 @@ namespace Plasmosis
             return result;
         }
 
+        // ###################### DOES NOT WORK ######################### //
         private String affineDecrypt(String str, int multiplier, int shift)
         {
             // Affine Decryption algorithm goes here.
             // Multiplier, Shift is garenteed to be an Integers.
+
+            
             char[] charset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>,.?/;:'\"[{]}|\\".ToCharArray();
             int len = charset.Length;
 
@@ -187,6 +198,9 @@ namespace Plasmosis
             return result;
         }
 
+
+        // ###################### DOES NOT WORK ######################### //
+        // Either Affine or Caesar decryption does not work properly.
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             switch (this.cipher)
@@ -208,6 +222,7 @@ namespace Plasmosis
                         else
                         {
                             txtOutput.Text = affineEncrypt(txtInput.Text, int.Parse(shortKey1.Text), int.Parse(shortKey2.Text));
+                            statusForfile = "Encrypted";
                         }
                     }
                 break;
@@ -220,6 +235,7 @@ namespace Plasmosis
                     else
                     {
                         txtOutput.Text = caesarShiftEncrypt(txtInput.Text, int.Parse(longKey.Text));
+                        statusForfile = "Encrypted";
                     }
                 break;
             }
@@ -233,10 +249,12 @@ namespace Plasmosis
                 try
                 {
                     txtOutput.Text = affineDecrypt(txtInput.Text, int.Parse(shortKey1.Text), int.Parse(shortKey2.Text));
+                    statusForfile = "Decrypted";
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show(error.Message + "\nPerhaps put Correct Input in [Key] section", "Error");
+                    
                 }
             }
             else if(this.cipher.Equals("Caesar"))
@@ -244,10 +262,12 @@ namespace Plasmosis
                 try
                 {
                     txtOutput.Text = caesarShiftDecrypt(txtInput.Text, int.Parse(longKey.Text));
+                    statusForfile = "Decrypted";
                 }
                 catch(Exception error)
                 {
                     MessageBox.Show(error.Message +"\nPerhaps put Correct Input in [Key] section", "Error");
+                    
                 }
             }
         }
@@ -339,6 +359,76 @@ namespace Plasmosis
             }
         }
 
-        
+        // Save to a file method.
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!this.txtOutput.Text.Equals("")) // works only if program has been used.
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save Result to a File";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK) // if destination choosen
+                {
+                    using (Stream destination = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                    using (StreamWriter kb = new StreamWriter(destination))
+                    {
+                        // Output File Format.
+                        kb.WriteLine("# Thank you for using our Program Plasmosis.");
+                        kb.WriteLine("# Here are some Important information about the output");
+                        kb.WriteLine();
+                        kb.WriteLine();
+
+                        kb.WriteLine("$ Saved Time : " + DateTime.Now);
+                        kb.WriteLine();
+
+                        kb.WriteLine("$ Algorithm Used : " + inputCipherForFile);
+                        kb.WriteLine();
+
+                        kb.WriteLine("$ Status : " + statusForfile);
+                        kb.WriteLine();
+
+                        kb.WriteLine("$ Input Passed in : ");
+                        kb.WriteLine();
+
+                        kb.WriteLine(inputForFile);
+                        kb.WriteLine();
+
+                        if (inputCipherForFile.Equals("Affine"))
+                        {
+                            kb.WriteLine("$ The Key used : Mutiplier -> "
+                                + inputShortKey1ForFile + " , Shift -> " + inputShortKey2ForFile);
+                        }
+                        else if(inputCipherForFile.Equals("Caesar"))
+                        {
+                            kb.WriteLine("$ The Key used : Shift -> " + inputLongKeyForFile);
+                        }
+
+                        kb.WriteLine();
+
+                        kb.WriteLine("$ Corresponding Output : ");
+                        kb.WriteLine();
+
+                        kb.WriteLine(txtOutput.Text);
+                           
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sorry, The output is empty.", "Error");
+            }
+        }
+
+
+        // When the output textbox field has been modified.
+        private void txtOutput_TextChanged(object sender, EventArgs e)
+        {
+            // Save the state or the result of that output for Saving to a file later.
+            inputCipherForFile = this.cipher;
+            inputForFile = txtInput.Text;
+            inputLongKeyForFile = longKey.Text;
+            inputShortKey1ForFile = shortKey1.Text;
+            inputShortKey2ForFile = shortKey2.Text;
+        }
     }
 }

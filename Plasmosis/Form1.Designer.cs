@@ -94,6 +94,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectionToolStripMenuItem,
             this.helpToolStripMenuItem});
@@ -233,13 +234,14 @@
             // 
             this.txtOutput.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.Font = new System.Drawing.Font("Arial", 9F);
             this.txtOutput.Location = new System.Drawing.Point(369, 117);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
             this.txtOutput.Size = new System.Drawing.Size(224, 384);
             this.txtOutput.TabIndex = 7;
             this.txtOutput.Text = "";
+            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
             // 
             // label3
             // 
@@ -259,6 +261,7 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save to File";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // infoLabel
             // 
